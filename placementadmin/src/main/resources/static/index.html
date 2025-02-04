@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel = "icon" href = "https://static.vecteezy.com/system/resources/previews/026/620/795/non_2x/konoha-symbol-hidden-leaf-naruto-free-vector.jpg" type="image/icon type">
+    <style>
+      body { 
+      font-family: Times new roman, times; 
+      background: #72A0C1; 
+      margin: 20px; 
+      }
+      table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin: 20px 0; 
+      }
+      th, td { 
+      border: 1px solid #ddd; 
+      padding: 8px; 
+      text-align: center; 
+      }
+      tr { 
+      background-color: #6DD5FA
+      }
+      th { 
+      background-color: #0066b2; 
+      color: white; 
+      }
+      .add-shop-container {
+      display: flex;flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 30%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      }
+      .add-shop-container input {
+      width: 70%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display:flex;
+      flex-wrap:wrap;
+      }
+      .add-shop-container button {
+      width: 50%;
+      padding: 10px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+      }
+      .add-shop-container button:hover { 
+      background-color: #45a049; 
+      }  
+    </style>
+</head>
+<body>
+    <h1 align ="center">Admin Dashboard</h1>
+    <h2>Manage Shops</h2>
+    <table id="shopTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Category</th>
+            <th>Rent</th>
+            <th>Mobile No</th>
+            <th>Floor No</th>
+            <th>Shop No</th>
+            <th>No. of Workers</th>
+			<th>Actions</th>
+        </tr>
+    </table>
+    <div class="add-shop-container">
+    <h3>ADD SHOP</h3>
+    <input type="text" id="name" placeholder="Shop Name">
+    <input type="text" id="owner" placeholder="Owner">
+    <input type="text" id="category" placeholder="Category">
+    <input type="number" id="rent" placeholder="Rent">
+    <input type="text" id="mobileNo" placeholder="Mobile No">
+    <input type="number" id="floorNo" placeholder="Floor No">
+    <input type="number" id="shopNo" placeholder="Shop No">
+    <input type="number" id="workers" placeholder="No. of Workers"><br>
+    <button onclick="addShop()">Add Shop</button><br>
+    </div>
+    <script>
+        const apiUrl = 'http://localhost:8081/api/shop';
+        function fetchShops() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.getElementById('shopTable');
+                    table.innerHTML = `<tr><th>ID</th><th>Name</th><th>Owner</th><th>Category</th><th>Rent</th><th>Mobile No</th><th>Floor No</th>
+                        <th>Shop No</th><th>No. of Workers</th><th>Actions</th></tr>`;
+                    let sequentialId = 1;
+                    data.forEach(shop => {
+                        table.innerHTML += `
+                            <tr>
+                                <td>${sequentialId}</td>
+                                <td>${shop.name}</td>
+                                <td>${shop.owner}</td>
+                                <td>${shop.category}</td>
+                                <td>${shop.rent}</td>
+                                <td>${shop.mobileNo}</td>
+                                <td>${shop.floorNo}</td>
+                                <td>${shop.shopNo}</td>
+                                <td>${shop.workers}</td>
+                                <td>
+                                    <button onclick="deleteShop(${shop.id})">Delete</button>
+                                </td>
+                            </tr>`;
+                            sequentialId++;
+                    });
+                });
+        }
+
+        function addShop() {
+            const shop = {
+                name: document.getElementById('name').value,
+                owner: document.getElementById('owner').value,
+                category: document.getElementById('category').value,
+                rent: document.getElementById('rent').value,
+                mobileNo: document.getElementById('mobileNo').value,
+                floorNo: document.getElementById('floorNo').value,
+                shopNo: document.getElementById('shopNo').value,
+                workers: document.getElementById('workers').value
+            };
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(shop)
+            }).then(() => fetchShops());
+        }
+
+        function deleteShop(id) {
+            fetch(`${apiUrl}/${id}`, { method: 'DELETE' })
+                .then(() => fetchShops());
+        }
+
+        fetchShops(); // Load shops on page load
+    </script>
+</body>
+</html>

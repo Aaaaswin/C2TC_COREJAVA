@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+        button { padding: 8px 12px; margin: 5px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Shopping Mall Admin Dashboard</h1>
+
+    <h2>Manage Shops</h2>
+    <table id="shopTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Category</th>
+            <th>Rent</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+
+    <h3>Add Shop</h3>
+    <input type="text" id="name" placeholder="Shop Name">
+    <input type="text" id="owner" placeholder="Owner">
+    <input type="text" id="category" placeholder="Category">
+    <input type="number" id="rent" placeholder="Rent">
+    <button onclick="addShop()">Add Shop</button>
+
+    <script>
+        const apiUrl = 'http://localhost:8080/api/shops';
+
+        function fetchShops() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.getElementById('shopTable');
+                    table.innerHTML = `<tr><th>ID</th><th>Name</th><th>Owner</th><th>Category</th><th>Rent</th><th>Actions</th></tr>`;
+                    data.forEach(shop => {
+                        table.innerHTML += `
+                            <tr>
+                                <td>${shop.id}</td>
+                                <td>${shop.name}</td>
+                                <td>${shop.owner}</td>
+                                <td>${shop.category}</td>
+                                <td>${shop.rent}</td>
+                                <td>
+                                    <button onclick="deleteShop(${shop.id})">Delete</button>
+                                </td>
+                            </tr>`;
+                    });
+                });
+        }
+
+        function addShop() {
+            const shop = {
+                name: document.getElementById('name').value,
+                owner: document.getElementById('owner').value,
+                category: document.getElementById('category').value,
+                rent: document.getElementById('rent').value
+            };
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(shop)
+            }).then(() => fetchShops());
+        }
+
+        function deleteShop(id) {
+            fetch(`${apiUrl}/${id}`, { method: 'DELETE' })
+                .then(() => fetchShops());
+        }
+
+        fetchShops(); // Load shops on page load
+    </script>
+</body>
+</html>
