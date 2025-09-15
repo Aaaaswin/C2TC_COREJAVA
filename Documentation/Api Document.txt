@@ -1,0 +1,78 @@
+(TestNG, Data Driven testing)
+-------
+API Testing Introduction: it testing comes under backend testing.--->postman(manuall),Restasure(automation).
+-------------------------
+
+For Web Based Application..(Client-----Server):
+----------------------------------------------
+Client
+-------
+     A client is a Computer hardware device or software that acces a service made it avalilable.
+Server
+-------
+     A Server ia a physisicaly Computer dedicated to run Services to Server the need of Other computer.
+	
+eg: user goes to seach any thing in google (url www.facebook )--client sending a request, and server will run and browser the data.
+
+client---> differ many way 1.web base, 2.mobile base ect....
+----------------------------------
+Client server architecture///
+	1. one tire architechure.(same client ---- same data base)
+	2. two tire architechure.(different client ----- one single data base)
+	3. three tire architechure.(client---database(bussines logic)server---server)
+
+layers of Web Application
+--------------------------
+	1.presentation layer.
+	2.Application layer.
+	3.Data layer.
+
+What is Api::::(mediator)(Api contatins a business logic)
+	its a Application Programing interface, is the way of communication between two applications, where application may difer in therier platform or in termd of technology.
+
+Types Api:
+	-> Soap(old)-Object Access protocol.--xml
+	-> Rest(new)- repersentation sate Transfer.--xml,json ect..
+		-----------both are called web service-------
+
+eg : it keep a data in internt(Google---Api---facebook)-- we need to communicate we need api.
+
+1. all webservice are  basically api
+2. all api are not webservice.(unti we move to the prod).----(Api/webservice)
+----------------------------------------------------------------------------------
+				Rest Api
+				---------
+it take a request form client and it serch in the server and fetech the data and send a responce.
+---------
+Rest api methods / http request
+--------------------------------
+get- insert some values.
+post-create some data base.
+put-update some thinng if any new.
+delete..---> this four are main.
+---------------------------------
+http- hyper text tansfer protocol.
+https-hyper text tansfer protocol secure.
+----------------------------------------------------------------------------------------
+				Terminology
+				-----------
+Uri -uniform resourse identifier.
+Url -uniform resourse locatore.
+Urn -Uniform resourse name.
+
+eg --> https://--> Scheme    //google.com-->Host   /articales/-->path(end point,resours , end point)
+
+Feature and resourse:
+--------------------
+	the feature term is normally called as in manuall testing as Functionality.
+	the resource term is normally called as in automation api testing. 
+Payload
+--------
+	the body of HTTP request and responce(Requerest Payload)---(Responce Playload).
+it s witch cna abe  a  valuelb for arossed for a be all welled.
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+

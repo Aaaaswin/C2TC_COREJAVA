@@ -1,0 +1,97 @@
+
+1.Basic prcesss of the company 
+		--->first the client is have any product failed
+		--->The perticular Client can communcate with the Comapny----the Status called as [Call Open]
+		--->and the L1 team like Call Center team will analiysis a issues and put a call on [Hold]
+		--->and the team  Log in to a  Particular App.----> and they assigened a Engineer.
+		--->and a Particular Field Engineer can go to the cilent place & the status like a -->trip start-->trip End-->work Start-->Some Times [DSR]--->Trip End--> meeting Start--> Commison discussion--> Meeiening End-->If we need Attachent added-->call Close.
+
+2.XCMG-->PWC WorkFlow (Part Warrent Claim). 
+		-->Create a call-->Login in toward a further app-->Assigg Engineer-->
+
+
+
+
+
+Hi Bro I have one doubte, after we wroat a test scenarior and test cases , we need to push that in github or we have a Test environment.
+
+
+
+Hi Bro I have one doubte, After we create the test scenarios and test cases, should we push them to GitHub, or is there a dedicated test environment for storing or managing them
+
+
+I would like to get some clarity on the types of flows we are expected to test. Should we be focusing on mobile-based applications, web-based applications, or both?
+
+We also have various modules, such as invoice bills and product-related master forms like machinery forms, parts claim forms, parts warranty, and several others. Could you please guide me on the scope of testing for these?
+
+Additionally, I have one more question—where should we store all the test-related documents? Do we have a separate testing environment or repository for this?
+
+
+And I am Additionaly adding....
+
+Today I preperd for a jira tool for how the defect can be tracked.
+and I gain a konlowdege to how to craete a call and they flows with the help of karthi.
+and I gain a knowledge of flow of Testing.
+And i analysis for yours test report for liugong. 
+
+
+Hi Sir good Morning.
+
+I have gothroug all client document and product related work flows, which is given by you.
+And I can ask testing work flows with our company testing team,and I am work on slight some products work flows and to gain a deep knowldge in jira tool
+
+
+
+I have gone through all the client documents and product-related workflows which you shared. I’ll also be coordinating with our testing team to gain a better understanding of the testing workflows. I’m working on a few product workflows to deepen my understanding and prepare for the effective use of the JIRA tool.
+
+
+
+I have gone through all the client documents and product-related workflows that you shared. I will also be coordinating with our team to gain a better understanding of the testing workflows. I am working on a few product workflows to deepen my understanding and prepare for the effective use of the JIRA tool.
+
+
+sir , and yseterday you sopek with Mr.ganesh, he told me and i ready to lern with him once i got a permisiton to learn with him a deep in jira. so you can provide me a permision with is TL praveen sir.
+
+
+hi everyone ,I hope you are all doing well!
+I am Aswin , and i am basically form Tindivanam and  Curently stay in chennai.
+and I am a new Joineee and My role is product test Engineer trainee role.
+and I am reporting to MR. Abishek sir.
+
+and I am basically preperd for a sleniummm tools
+
+
+
+Yesterday, you spoke with Mr. Ganesh regarding my interest in learning JIRA. He informed me about your discussion, and I am ready and eager to learn from him in depth.
+
+I kindly request your permission to proceed with this learning under the guidance of his Team Lead, Mr. Praveen..
+
+
+
+[[[[[[to be report a new defect into jira ]]]]]]]
+
+ i informed him sir..
+
+
+
+Good Afternoon Sir. Just give me some ideas what kind of flows we tested like mobile based app or web baed app and we also have a various Invios bill andproduct related Master formes like machinery and part claim forms many forms like that sir.
+
+
+
+es, Sir. I have gone through the entire process. The main task is to follow the flow and Enter/display the values and take screenshots, and compile them into a report like PPt/Word,and We also need to showcase all possible scenarios.
+
+yeah, Sir i gone though the all procees, That Mainly scenarios is To foll the flow and enter/Show a values and make a screenshort and make it as a report in ppt/word and We need Can show the all possible Sinarios.
+	
+Yes, Sir. I have gone through the entire process. The main task is to follow the flow and Enter/display the values and take screenshots, and compile them into a report like PPt/Word,and We also need to showcase all possible scenarios.
+
+Yes, Sir. I have gone through the entire process. The main task is to follow the flow and Enter/display the values and take screenshots, and compile them into a report like PPt/Word, and We also need to showcase all possible scenarios.
+
+Yes, Sir. I have gone through the entire process. Based on my understanding, the main task is to follow the flow, enter/display the values, take screenshots of each step, and compile them into a report, such as a PowerPoint or Word document. We also need to showcase all possible scenarios.
+
+
+
+
+
+Thanks & Regards,
+Mr. Aswin R
+Product Test Engineer Trainee
+Selfservit Solutions Pvt Ltd.	
